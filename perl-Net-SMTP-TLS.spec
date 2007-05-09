@@ -6,7 +6,7 @@
 %define	pdir	Net
 %define	pnam	SMTP-TLS
 Summary:	Net::SMTP::TLS - An SMTP client supporting TLS and AUTH
-#Summary(pl.UTF-8):	
+Summary(pl.UTF-8):	Net::SMTP::TLS - klient SMTP obsługujący TLS i AUTH
 Name:		perl-Net-SMTP-TLS
 Version:	0.12
 Release:	1
@@ -32,8 +32,11 @@ interface that users will find familiar from Net::SMTP. Net::SMTP::TLS
 implements a subset of the methods provided by that module, but
 certainly not (yet) a complete mirror image of that API.
 
-# %description -l pl.UTF-8
-# TODO
+%description -l pl.UTF-8
+Net::SMTP::TLS to klient SMTP obsługujący TLS i AUTH, oferujący
+użytkownikom interfejs zbliżony do Net::SMTP. Net::SMTP::TLS
+implementuje podzbiór metod udostępnianych przez tamten moduł, ale
+(jeszcze) nie pełne odzwierciedlenie tamtego API.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
