@@ -9,7 +9,7 @@ Summary:	Net::SMTP::TLS - An SMTP client supporting TLS and AUTH
 Summary(pl.UTF-8):	Net::SMTP::TLS - klient SMTP obsługujący TLS i AUTH
 Name:		perl-Net-SMTP-TLS
 Version:	0.12
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
