@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define	pdir	Net
 %define	pnam	SMTP-TLS
 Summary:	Net::SMTP::TLS - An SMTP client supporting TLS and AUTH
