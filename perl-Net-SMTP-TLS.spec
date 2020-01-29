@@ -8,12 +8,14 @@ Summary:	Net::SMTP::TLS - An SMTP client supporting TLS and AUTH
 Summary(pl.UTF-8):	Net::SMTP::TLS - klient SMTP obsługujący TLS i AUTH
 Name:		perl-Net-SMTP-TLS
 Version:	0.12
-Release:	2
+Release:	3
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Net/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	a845eba3670e56a197ecd37f571d153a
+Patch0:		io-socket-ssl.patch
+Patch1:		multiple-attachments.patch
 URL:		http://search.cpan.org/dist/Net-SMTP-TLS/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -39,6 +41,8 @@ implementuje podzbiór metod udostępnianych przez tamten moduł, ale
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
+%patch0 -p1
+%patch1 -p1
 
 %build
 %{__perl} Makefile.PL \

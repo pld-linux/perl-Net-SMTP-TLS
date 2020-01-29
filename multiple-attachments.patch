@@ -1,0 +1,18 @@
+Description: fix error attaching multiple files
+Origin: vendor
+Bug: https://rt.cpan.org/Public/Bug/Display.html?id=63538
+Bug-Ubuntu: https://bugs.launchpad.net/bugs/1657917
+Author: Phil Evans <pae9@star.le.ac.uk>
+Reviewed-by: gregor herrmann <gregoa@debian.org>
+Last-Update: 2017-01-26
+
+--- a/lib/Net/SMTP/TLS.pm
++++ b/lib/Net/SMTP/TLS.pm
+@@ -366,6 +366,7 @@
+ 				return undef;
+ 			}
+ 			$len -= $w;
++			$offset += $w;
+ 		}
+ 		else
+ 		{

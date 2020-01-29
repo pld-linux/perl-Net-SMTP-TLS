@@ -1,0 +1,22 @@
+Description: Fix syntax problem in IO::Socket::SSL call.
+ The usage of SSL_version was wrong, and IO::Socket::SSL uses sensible defaults anyway.
+ Cf. also https://rt.cpan.org/Public/Bug/Display.html?id=77401 .
+Origin: vendor
+Bug: https://rt.cpan.org/Ticket/Display.html?id=85637
+Bug-Debian: https://bugs.debian.org/728660
+Author: Steffen Ullrich <sullr@cpan.org>
+Reviewed-by: gregor herrmann <gregoa@debian.org>
+Last-Update: 2017-01-26
+
+--- a/lib/Net/SMTP/TLS.pm
++++ b/lib/Net/SMTP/TLS.pm
+@@ -178,8 +178,7 @@
+ 	if(not $num == 220){
+ 		croak "Invalid response for STARTTLS: $num $txt\n";
+ 	}
+-	if(not IO::Socket::SSL::socket_to_SSL($me->{sock},
+-		SSL_version	=>	"SSLv3 TLSv1")){
++	if(not IO::Socket::SSL::socket_to_SSL($me->{sock})){
+ 			croak "Couldn't start TLS: ".IO::Socket::SSL::errstr."\n";
+ 	}
+ 	$me->hello();
